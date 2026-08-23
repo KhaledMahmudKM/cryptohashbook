@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Khaled Mahmud">
+  <meta name="description" content="A concise, hands-on book on cryptographic hashes with live in-browser calculators.">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <meta name="theme-color" content="#5a9e2f">
+
+  <title>Book</title>
+
+  <!-- Set theme before first paint to avoid a flash of the wrong palette -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('kmbooks-theme');
+      var theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Webfonts: Inter (sans) + JetBrains Mono (mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js theme (light + dark, toggled in main.js) -->
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css" id="hljs-light-theme">
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" id="hljs-dark-theme" disabled>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" integrity="sha512-BrOPA520KmDMqieeM7XFe6a3u3Sb3F1JBaQnrIAmWg3EYrciJ+Qqe6ZcKCdfPv26rGcgTrJnZ/IdQEct8h3Zhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Load libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+
+  <!-- Live hash-calculator engine (this book only) -->
+  <script src="assets/md5-ns.js"></script>
+  <script src="assets/ripemd160-ns.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha3/0.9.3/sha3.min.js"></script>
+  <script src="assets/hashcalc.js"></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <button class="hamburger" id="sidebar-toggle" aria-label="Toggle table of contents" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="https://khaledmahmudkm.github.io/stacks/" aria-label="Back to stacks">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round">
+            <path d="M32 14 L52 24 L32 34 L12 24 Z"/>
+            <path d="M12 32 L32 42 L52 32"/>
+            <path d="M12 40 L32 50 L52 40"/>
+          </g>
+        </svg>
+        <h1 id="book-title"></h1>
+      </a>
+      <button class="theme-btn" id="theme-toggle" aria-label="Toggle color theme"></button>
+    </header>
+  <!-- Overlay for closing sidebar on mobile -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Chapters</h2>
+        <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&#x2715;</button>
+      </div>
+        <ul id="toc">
+        </ul>
+    </aside>
+
+    <main class="content markdown-body" id="content">
+    </main>
+  </div>
+  <footer class="footer">
+    <i><p id="book-copyright"></p></i>
+  </footer>
+</div>
+
+  <!-- Script to load and display markdown -->
+    <script src="kmbooks_js/main.js"></script>
+
+</body>
+</html>

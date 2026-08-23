@@ -1,0 +1,14 @@
+[
+  { "separator": "— Part I · Foundations & Algorithms —" },
+  "01-what-a-hash-is.md",
+  "02-anatomy-of-a-digest.md",
+  "03-md5.md",
+  "04-sha1-and-sha2.md",
+  "05-sha3-and-keccak.md",
+  "06-ripemd-160.md",
+  { "separator": "— Part II · Constructions & Applications —" },
+  "07-hmac.md",
+  "08-pbkdf2.md",
+  "09-wpa-psk.md",
+  "10-hashes-in-the-browser.md"
+]
