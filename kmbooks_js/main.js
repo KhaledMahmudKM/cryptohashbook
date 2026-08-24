@@ -165,7 +165,7 @@ function initChapterExtras(path) {
   const file = path.split("/").pop();
   if (HASHCALC_CONFIGS[file]) {
     const [containerId, config] = HASHCALC_CONFIGS[file];
-    if (window.HashCalc) HashCalc.mount(containerId, config);
+    if (typeof HashCalc !== "undefined") HashCalc.mount(containerId, config);
   }
   if (CHAPTER_INIT[file]) {
     CHAPTER_INIT[file]();
