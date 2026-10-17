@@ -14,6 +14,6 @@ Hashing passphrases or sensitive text on a remote server means trusting that ser
 
 ## A note on trust and test vectors
 
-How do you know an implementation is correct? You check it against published **test vectors** — known input/output pairs from the standards. The appendix lists the ones these calculators were verified against, so you can confirm them yourself.
+How do you know an implementation is correct? You check it against published **test vectors** — known input/output pairs from the standards. The [appendix](11-appendix-test-vectors.md) lists the ones these calculators were verified against, so you can confirm them yourself.
 
-> **Build it yourself.** The whole book runs on the same small JavaScript engine (`hashcalc.js`) that each chapter configures declaratively. No framework, no build step.
+> **Build it yourself.** All the calculators run on one small JavaScript widget (`hashcalc.js`), and each chapter's calculator is a short declarative configuration in `book.js`. No framework, no build step.

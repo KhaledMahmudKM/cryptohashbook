@@ -16,19 +16,4 @@ A **salt** is a unique random value mixed with each password, so identical passw
 
 This calculator derives a key with PBKDF2-HMAC-SHA256. Change the salt or iteration count and watch the derived key change. (It runs on the Web Crypto API.)
 
-<div class="hc" id="pbkdf2box">
-  <div class="hc-title">PBKDF2 key derivation</div>
-  <div class="hc-field"><label for="pb-pass">password</label>
-    <input class="hc-input" id="pb-pass" placeholder="passphrase…" value="password" autocomplete="off"></div>
-  <div class="hc-field"><label for="pb-salt">salt</label>
-    <input class="hc-input" id="pb-salt" value="salt" autocomplete="off"></div>
-  <div class="hc-field"><label for="pb-iter">iterations</label>
-    <input class="hc-input" id="pb-iter" type="number" min="1" max="1000000" value="100000"></div>
-  <div class="hc-field"><label for="pb-bytes">key bytes</label>
-    <input class="hc-input" id="pb-bytes" type="number" min="1" max="256" value="32"></div>
-  <div class="hc-rows"><div class="hc-row">
-    <div class="hc-name">derived key<small>PBKDF2-HMAC-SHA256</small></div>
-    <div class="hc-out" id="pb-out"></div>
-    <button class="hc-copy" data-for="pb-out" title="Copy">⧉</button>
-  </div></div>
-</div>
+<div id="calc8"></div>

@@ -17,17 +17,6 @@ So the PSK is simply `PBKDF2(passphrase, SSID, 4096, 32)` over HMAC-SHA1. This i
 
 ## Try it
 
-Enter a passphrase and SSID to compute the raw PSK. The iteration count and key size are fixed by the standard.
+Enter a passphrase and SSID to compute the raw PSK. The iteration count and key size are fixed by the standard. The defaults reproduce the standard's own test vector, listed in the [appendix](11-appendix-test-vectors.md).
 
-<div class="hc" id="wpabox">
-  <div class="hc-title">WPA/WPA2 passphrase → PSK</div>
-  <div class="hc-field"><label for="wp-pass">passphrase</label>
-    <input class="hc-input" id="wp-pass" placeholder="8–63 characters…" value="password" autocomplete="off"></div>
-  <div class="hc-field"><label for="wp-ssid">SSID</label>
-    <input class="hc-input" id="wp-ssid" value="IEEE" autocomplete="off"></div>
-  <div class="hc-rows"><div class="hc-row">
-    <div class="hc-name">raw PSK<small>PBKDF2-HMAC-SHA1 · 4096 · 32B</small></div>
-    <div class="hc-out" id="wp-out"></div>
-    <button class="hc-copy" data-for="wp-out" title="Copy">⧉</button>
-  </div></div>
-</div>
+<div id="calc9"></div>

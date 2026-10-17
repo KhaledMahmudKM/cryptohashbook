@@ -1,0 +1,120 @@
+/* ── Live hash calculators (this book's widget) ──────────────
+   Uses the engine's colour tokens, so it follows light/dark. */
+.hc{
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.1rem 1.2rem 1.25rem;
+  margin:1.7rem 0;
+}
+.hc-title{
+  font-family:var(--mono);
+  font-size:0.7rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:0.85rem;
+}
+.hc-field{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  align-items:center;
+  gap:0.55rem 0.9rem;
+  margin:0 0 0.65rem;
+}
+.hc-field label{
+  font-family:var(--mono);
+  font-size:0.8rem;
+  color:var(--text-dim);
+  text-align:right;
+}
+.hc-input{
+  width:100%;
+  font-family:var(--mono);
+  font-size:0.9rem;
+  padding:0.55rem 0.7rem;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--text);
+  transition:.15s;
+}
+.hc-input::placeholder{ color:var(--text-faint); }
+.hc-input:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-glow);
+}
+.hc-controls{
+  display:flex;
+  gap:1.1rem;
+  align-items:center;
+  margin:0.1rem 0 0.8rem;
+  font-family:var(--mono);
+  font-size:0.78rem;
+  color:var(--text-dim);
+}
+.hc-controls label{ display:flex; gap:0.4rem; align-items:center; cursor:pointer; }
+.hc-controls input[type=radio]{ accent-color:var(--accent); }
+.hc-rows{ display:flex; flex-direction:column; }
+.hc-row{
+  display:grid;
+  grid-template-columns:130px 1fr 40px;
+  align-items:center;
+  gap:0.55rem 0.9rem;
+  padding:0.45rem 0;
+  border-top:1px solid var(--border-soft);
+}
+.hc-row:first-child{ border-top:none; }
+.hc-name{
+  font-family:var(--mono);
+  font-size:0.8rem;
+  color:var(--text-dim);
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:1px;
+}
+.hc-name small{ color:var(--text-faint); font-size:0.66rem; letter-spacing:.03em; }
+.hc-out{
+  font-family:var(--mono);
+  font-size:0.85rem;
+  color:var(--accent);
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:0.48rem 0.65rem;
+  word-break:break-all;
+  min-height:34px;
+  display:flex;
+  align-items:center;
+  letter-spacing:.01em;
+}
+.hc-out:empty::before{ content:"—"; color:var(--text-faint); }
+.hc-out.hc-err{ color:#d64545; }
+.hc-copy{
+  background:var(--panel);
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  border-radius:7px;
+  padding:0.38rem;
+  cursor:pointer;
+  font-size:0.9rem;
+  line-height:1;
+  transition:.15s;
+}
+.hc-copy:hover{ border-color:var(--accent-dim); color:var(--accent); }
+.hc-copy.hc-done{ border-color:var(--accent); color:var(--accent); }
+
+@media (max-width: 768px){
+  .hc-field{ grid-template-columns:1fr; gap:0.25rem; }
+  .hc-field label{ text-align:left; }
+  .hc-row{
+    grid-template-columns:1fr auto;
+    grid-template-areas:"name copy" "out out";
+  }
+  .hc-name{ grid-area:name; align-items:flex-start; text-align:left; }
+  .hc-copy{ grid-area:copy; }
+  .hc-out{ grid-area:out; }
+}
