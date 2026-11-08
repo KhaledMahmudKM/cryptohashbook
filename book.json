@@ -17,5 +17,7 @@
     "https://cdnjs.cloudflare.com/ajax/libs/js-sha3/0.9.3/sha3.min.js",
     "assets/hashcalc.js",
     "assets/book.js"
-  ]
+  ],
+  "palette": "moss",
+  "_comment": "palette options are: moss, harbor, lagoon, sepia, clay"
 }
